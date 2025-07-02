@@ -1,0 +1,14 @@
+
+소멸자에 Ntuple Interface에서 CloseNtuple call을 없앴음.
+원래 test 디렉토리에선 소멸시켜도 큰 문제가 없는데 왜 하필 이 코드에선 소멸자에서 Close Ntuple을 call하면 안되는지 모르겠음
+
+step 1에서 output으로 나온 것들의 접두어가 output임. 이거 hadd할때 이름이 맞지 않음
+
+이름 맟줘서 Trigger Efficiency 동작시켜도 일단 include BinConfig 위치 지정해 주고 output으로 나온 scale factor 상단 디렉토리로 이동시켜 줘야함
+
+아래 부분 에러남:
+        // Fill output tree with this event (if in applySF mode)
+        if (applySF) {
+            outputTree->Fill();
+        }
+
